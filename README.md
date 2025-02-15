@@ -16,13 +16,14 @@
 
 ## Development environment
 ```
-macOS    - Sonoma 14.x.x
-python   - v3.13.0
-pip      - v25.0.1
-jupyter  - v1.1.1
-notebook - v7.3.2
-torch    - v2.6.0
-numpy    - v2.2.2
+macOS      - Sonoma 14.x.x
+python     - v3.13.0
+pip        - v25.0.1
+jupyter    - v1.1.1
+notebook   - v7.3.2
+torch      - v2.6.0
+numpy      - v2.2.2
+matplotlib - v3.10.0
 ```
 ## How to set up
 ### 1. Clone this repository
@@ -34,10 +35,11 @@ cd gnn-for-ppi
 ```zsh {iscopy=true}
 python3 -m venv .venv
 source .venv/bin/activate
-.venv/bin/python3 pip install --upgrade pip
-.venv/bin/python3 pip install jupyter notebook
-.venv/bin/python3 pip install torch
-.venv/bin/python3 pip install numpy
+.venv/bin/python3 -m pip install --upgrade pip
+.venv/bin/python3 -m pip install jupyter notebook
+.venv/bin/python3 -m pip install torch
+.venv/bin/python3 -m pip install numpy
+.venv/bin/python3 -m pip install matplotlib
 ```
 ### 3. Download dataset of PPI
 ```zsh {iscopy=true}
