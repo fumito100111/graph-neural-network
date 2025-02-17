@@ -7,11 +7,6 @@ from torch import Tensor
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# class Graph(object):
-#     def __init__(self, index: int, node_labels: ndarray, edges: ndarray):
-#         index: int
-#         self.node_labels = node_labels
-#         self.edges = edges
 
 class Data(object):
     def __init__(self, title: str, dataset_dir: str) -> None:
@@ -23,7 +18,6 @@ class Data(object):
     
     def create_graphs(self):
         index = np.unique(self.graph_idx)
-        # print(index)
         graphs = []
         node_ids = np.arange(1, self.node_attrs.shape[0]+1)
 
@@ -37,27 +31,20 @@ class Data(object):
             for i in range(0, len(current_nodes)):
                 G.add_node(int(current_nodes[i]), label=node_attrs[i])
 
-            edges = []
             for edge in self.edges:
                 if edge[0] in current_nodes and edge[1] in current_nodes:
                     G.add_edge(int(edge[0]), int(edge[1]))
             
-  
-            print(current_nodes)
-            print()
-            # G.add_nodes_from(nodes)
-            # G.add_edges_from(edges)
             graphs.append(G)
         self.graphs = graphs
 
+      
 
 if __name__ == '__main__':
     data = Data('proteins', './dataset/proteins')
     data.create_graphs()
     graphs = data.graphs
-    print(graphs[0].nodes())
-    print()
-    print(graphs[0].edges())
 
     nx.draw_networkx(graphs[0])
     plt.show()
+
