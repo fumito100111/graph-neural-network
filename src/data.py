@@ -5,6 +5,7 @@ from numpy import ndarray
 import torch
 from torch import Tensor
 import networkx as nx
+import matplotlib.pyplot as plt
 
 # class Graph(object):
 #     def __init__(self, index: int, node_labels: ndarray, edges: ndarray):
@@ -26,34 +27,37 @@ class Data(object):
         graphs = []
         node_ids = np.arange(1, self.node_attrs.shape[0]+1)
 
-        for idx in index[:10]:
-
+        for idx in index[:1]:
             sub = self.graph_idx == idx
             current_nodes = node_ids[sub]
+
+            G = nx.Graph()
+            node_attrs = self.node_attrs[sub]
+            node_labels = self.node_labels[sub]
+            for i in range(0, len(current_nodes)):
+                G.add_node(int(current_nodes[i]), label=node_attrs[i])
+
             edges = []
             for edge in self.edges:
                 if edge[0] in current_nodes and edge[1] in current_nodes:
-                    edges.append(edge)
-            # edges = self.edges[self.edges[0] in current_nodes and self.edges[1] in current_nodes]
-            # graph_labels = self.graph_labels[sub]
-            node_attrs = self.node_attrs[sub]
-            node_labels = self.node_labels[sub]
-            nodes = [(current_nodes[i], node_attrs[i]) for i in range(0, len(current_nodes))]
-
-            G = nx.Graph()
-            G.add_nodes_from(nodes)
-            G.add_edges_from(edges)
+                    G.add_edge(int(edge[0]), int(edge[1]))
+            
+  
+            print(current_nodes)
+            print()
+            # G.add_nodes_from(nodes)
+            # G.add_edges_from(edges)
             graphs.append(G)
         self.graphs = graphs
-        print(len(self.graphs))
-
-
-
-#     def connected_edges(self) -> ndarray:
-
-
 
 
 if __name__ == '__main__':
-   data = Data('proteins', './dataset/proteins')
-   data.create_graphs()        
+    data = Data('proteins', './dataset/proteins')
+    data.create_graphs()
+    graphs = data.graphs
+    print(graphs[0].nodes())
+    print()
+    print(graphs[0].edges())
+
+    nx.draw_networkx(graphs[0])
+    plt.show()
