@@ -25,7 +25,8 @@ class Data(object):
         # print(index)
         graphs = []
         node_ids = np.arange(1, self.node_attrs.shape[0]+1)
-        for idx in index:
+
+        for idx in index[:10]:
 
             sub = self.graph_idx == idx
             current_nodes = node_ids[sub]
@@ -33,7 +34,6 @@ class Data(object):
             for edge in self.edges:
                 if edge[0] in current_nodes and edge[1] in current_nodes:
                     edges.append(edge)
-            print(edges)
             # edges = self.edges[self.edges[0] in current_nodes and self.edges[1] in current_nodes]
             # graph_labels = self.graph_labels[sub]
             node_attrs = self.node_attrs[sub]
@@ -42,8 +42,10 @@ class Data(object):
 
             G = nx.Graph()
             G.add_nodes_from(nodes)
-            print(node_attrs)
-            print()
+            G.add_edges_from(edges)
+            graphs.append(G)
+        self.graphs = graphs
+        print(len(self.graphs))
 
 
 
