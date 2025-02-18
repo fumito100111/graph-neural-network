@@ -8,7 +8,6 @@
   - [How to set up](#how-to-set-up)
     - [1. Clone this repository](#1-clone-this-repository)
     - [2. Create virtual environment for Python](#2-create-virtual-environment-for-python)
-    - [3. Download dataset of PPI](#3-download-dataset-of-ppi)
 
 ## Reference
 ### 「 The Graph Neural Network Model 」
@@ -16,13 +15,15 @@
 
 ## Development environment
 ```
-macOS    - Sonoma 14.x.x
-python   - v3.13.0
-pip      - v25.0.1
-jupyter  - v1.1.1
-notebook - v7.3.2
-torch    - v2.6.0
-numpy    - v2.2.2
+macOS      - Sonoma 14.x.x
+python     - v3.13.0
+pip        - v25.0.1
+jupyter    - v1.1.1
+notebook   - v7.3.2
+torch      - v2.6.0
+numpy      - v.2.2.3
+networkx   - v.3.4.2
+matplotlib - v.3.10.0
 ```
 ## How to set up
 ### 1. Clone this repository
@@ -34,17 +35,19 @@ cd gnn-for-ppi
 ```zsh {iscopy=true}
 python3 -m venv .venv
 source .venv/bin/activate
-.venv/bin/python3 pip install --upgrade pip
-.venv/bin/python3 pip install jupyter notebook
-.venv/bin/python3 pip install torch
-.venv/bin/python3 pip install numpy
+.venv/bin/python3 -m pip install --upgrade pip
+.venv/bin/python3 -m pip install jupyter notebook
+.venv/bin/python3 -m pip install torch
+.venv/bin/python3 -m pip install numpy
+.venv/bin/python3 -m pip install networkx
+.venv/bin/python3 -m pip install matplotlib
 ```
-### 3. Download dataset of PPI
-```zsh {iscopy=true}
-mkdir dataset
-curl -o dataset/proteins.zip https://nrvis.com/download/data/labeled/proteins.zip
-unzip -d dataset/proteins dataset/proteins.zip
-rm dataset/proteins.zip
-rm dataset/proteins/readme.html
+
+
+```math
+\begin{align}
+\bm{x}_n &= f_{\bm{w}}(\bm{l}_n, \bm{l}_{co[n]}, \bm{x}_{ne[n]}, \bm{l}_{ne[n]}) \\
+
+\bm{o}_n &= g_{\bm{w}}(\bm{x}_n, \bm{l}_n)
+\end{align}
 ```
-> Network Data Repository - PROTEINS: https://networkrepository.com/proteins.php

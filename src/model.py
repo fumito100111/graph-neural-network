@@ -107,7 +107,7 @@ class G(nn.Module):
         return out
 
 """
-MAIN block in TABLE I
+MAIN block in TABLE
 """
 class Main():
     def __init__(self):
