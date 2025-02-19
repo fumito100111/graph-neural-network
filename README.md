@@ -42,12 +42,3 @@ source .venv/bin/activate
 .venv/bin/python3 -m pip install networkx
 .venv/bin/python3 -m pip install matplotlib
 ```
-
-
-```math
-\begin{align}
-\bm{x}_n &= f_{\bm{w}}(\bm{l}_n, \bm{l}_{co[n]}, \bm{x}_{ne[n]}, \bm{l}_{ne[n]}) \\
-
-\bm{o}_n &= g_{\bm{w}}(\bm{x}_n, \bm{l}_n)
-\end{align}
-```
