@@ -1,6 +1,6 @@
-# Graph Neural Network
+# Graph Neural Network (GNN)
 ## Contents
-- [GNN for PPI (Protein-Protein Interaction)](#graph-neural-network)
+- [Graph Neural Network (GNN)](#graph-neural-network)
   - [Contents](#contents)
   - [Reference](#reference)
     - [「 The Graph Neural Network Model 」](#-the-graph-neural-network-model-)
