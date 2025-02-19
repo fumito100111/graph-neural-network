@@ -1,6 +1,6 @@
-# GNN for PPI (Protein-Protein Interaction)
+# Graph Neural Network (GNN)
 ## Contents
-- [GNN for PPI (Protein-Protein Interaction)](#gnn-for-ppi-protein-protein-interaction)
+- [Graph Neural Network (GNN)](#graph-neural-network)
   - [Contents](#contents)
   - [Reference](#reference)
     - [「 The Graph Neural Network Model 」](#-the-graph-neural-network-model-)
@@ -21,9 +21,9 @@ pip        - v25.0.1
 jupyter    - v1.1.1
 notebook   - v7.3.2
 torch      - v2.6.0
-numpy      - v.2.2.3
+numpy      - v2.2.2
 networkx   - v.3.4.2
-matplotlib - v.3.10.0
+matplotlib - v3.10.0
 ```
 ## How to set up
 ### 1. Clone this repository
