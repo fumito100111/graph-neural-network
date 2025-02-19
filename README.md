@@ -8,7 +8,6 @@
   - [How to set up](#how-to-set-up)
     - [1. Clone this repository](#1-clone-this-repository)
     - [2. Create virtual environment for Python](#2-create-virtual-environment-for-python)
-    - [3. Download dataset of PPI](#3-download-dataset-of-ppi)
 
 ## Reference
 ### 「 The Graph Neural Network Model 」
