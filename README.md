@@ -28,8 +28,8 @@ matplotlib - v3.10.0
 ## How to set up
 ### 1. Clone this repository
 ```zsh {iscopy=true}
-git clone https://github.com/fumito100111/gnn-for-ppi.git
-cd gnn-for-ppi
+git clone https://github.com/fumito100111/graph-neural-network.git
+cd graph-neural-network
 ```
 ### 2. Create virtual environment for Python
 ```zsh {iscopy=true}
