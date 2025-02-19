@@ -23,6 +23,7 @@ jupyter    - v1.1.1
 notebook   - v7.3.2
 torch      - v2.6.0
 numpy      - v2.2.2
+networkx   - v.3.4.2
 matplotlib - v3.10.0
 ```
 ## How to set up
@@ -39,5 +40,6 @@ source .venv/bin/activate
 .venv/bin/python3 -m pip install jupyter notebook
 .venv/bin/python3 -m pip install torch
 .venv/bin/python3 -m pip install numpy
+.venv/bin/python3 -m pip install networkx
 .venv/bin/python3 -m pip install matplotlib
 ```
