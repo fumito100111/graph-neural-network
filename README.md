@@ -41,12 +41,3 @@ source .venv/bin/activate
 .venv/bin/python3 -m pip install numpy
 .venv/bin/python3 -m pip install matplotlib
 ```
-### 3. Download dataset of PPI
-```zsh {iscopy=true}
-mkdir dataset
-curl -o dataset/proteins.zip https://nrvis.com/download/data/labeled/proteins.zip
-unzip -d dataset/proteins dataset/proteins.zip
-rm dataset/proteins.zip
-rm dataset/proteins/readme.html
-```
-> Network Data Repository - PROTEINS: https://networkrepository.com/proteins.php
